@@ -11,6 +11,15 @@ export const TREE = 'tree';
 export const TREE_CLUSTER = 'treeCluster';
 export const ROCK1 = 'rock1';
 export const ROCK2 = 'rock2';
+export const RHINO = 'rhino';
+export const RHINO_LIFT_EAT1 = 'rhinoLiftEat1';
+export const RHINO_LIFT_EAT2 = 'rhinoLiftEat2';
+export const RHINO_LIFT_EAT3 = 'rhinoLiftEat3';
+export const RHINO_LIFT_EAT4 = 'rhinoLiftEat4';
+export const RHINO_LIFT_MOUTH_OPEN = 'rhinoLiftMouthOpen';
+export const RHINO_LIFT = 'rhinoLift';
+export const RHINO_RUN_LEFT1 = 'rhinoRunLeft1';
+export const RHINO_RUN_LEFT2 = 'rhinoRunLeft2';
 
 export const SKIER_STARTING_SPEED = 10;
 export const SKIER_DIAGONAL_SPEED_REDUCER = 1.4142;
@@ -25,7 +34,16 @@ export const ASSETS = {
     [TREE] : 'img/tree_1.png',
     [TREE_CLUSTER] : 'img/tree_cluster.png',
     [ROCK1] : 'img/rock_1.png',
-    [ROCK2] : 'img/rock_2.png'
+    [ROCK2] : 'img/rock_2.png',
+    [RHINO] : 'img/rhino_default.png',
+    [RHINO_LIFT_EAT1] : 'img/rhino_lift_eat_1.png',
+    [RHINO_LIFT_EAT2] : 'img/rhino_lift_eat_2.png',
+    [RHINO_LIFT_EAT3] : 'img/rhino_lift_eat_3.png',
+    [RHINO_LIFT_EAT4] : 'img/rhino_lift_eat_4.png',
+    [RHINO_LIFT_MOUTH_OPEN] : 'img/rhino_lift_mouth_open.png',
+    [RHINO_LIFT] : 'img/rhino_lift.png',
+    [RHINO_RUN_LEFT1] : 'img/rhino_run_left.png',
+    [RHINO_RUN_LEFT2] : 'img/rhino_run_left_2.png'
 };
 
 export const SKIER_DIRECTIONS = {
