@@ -17,6 +17,11 @@ rather you take the time and produce a solution up to your ability than rush and
 look through the requirements below and let us know when you will have something for us to look at. If anything is 
 unclear, don't hesitate to reach out.
 
+**My Comments**
+
+* Added jump & rhino assets to constants
+* Added space bar to key map
+
 **Requirements**
 
 * **Fix a bug:**

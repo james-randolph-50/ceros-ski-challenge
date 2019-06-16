@@ -32,6 +32,9 @@ export class Skier extends Entity {
             case Constants.SKIER_DIRECTIONS.RIGHT_DOWN:
                 this.moveSkierRightDown();
                 break;
+            case Constants.SKIER_DIRECTIONS.JUMP_ONE:
+                this.jump();
+                break;
         }
     }
 
@@ -89,8 +92,14 @@ export class Skier extends Entity {
         this.setDirection(Constants.SKIER_DIRECTIONS.DOWN);
     }
 
+    jump() {
+        this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE);
+        console.log("jump");
+    }
+
     checkIfSkierHitObstacle(obstacleManager, assetManager) {
         const asset = assetManager.getAsset(this.assetName);
+        //console.log(skierBounds);
         const skierBounds = new Rect(
             this.x - asset.width / 2,
             this.y - asset.height / 2,
