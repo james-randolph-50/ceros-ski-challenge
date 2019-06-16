@@ -96,7 +96,7 @@ export class Skier extends Entity {
             this.y - asset.height / 2,
             this.x + asset.width / 2,
             this.y - asset.height / 4
-        );
+            );
 
         const collision = obstacleManager.getObstacles().find((obstacle) => {
             const obstacleAsset = assetManager.getAsset(obstacle.getAssetName());
@@ -115,4 +115,5 @@ export class Skier extends Entity {
             this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
         }
     };
+     
 }
