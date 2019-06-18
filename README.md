@@ -29,6 +29,12 @@ The skier crash was position 0, so subtracting 1 from that made a request for th
 
 * **How I Added Jump Functionality**
 
+Created a jump method which changed the skier direction to the jump image, while maintaining the negative y-trajectory.
+
+Added a block-scoped turnDown function which returned the image to the downhill skier.
+
+Called that turnDown after one second passed.
+
 * **How I Enabled Jumping Over Certain Obstacles:**
 
 * **How I Added the Rhino:**
