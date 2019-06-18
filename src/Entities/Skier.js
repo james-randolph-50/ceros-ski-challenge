@@ -79,7 +79,7 @@ export class Skier extends Entity {
         }
         else {
             this.setDirection(this.direction + 1);
-        }
+        }  
     }
 
     turnUp() {
@@ -94,7 +94,8 @@ export class Skier extends Entity {
 
     jump() {
         this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE);
-        console.log("jump");
+        this.y += this.speed;
+        setTimeout(this.turnDown, 1000)
     }
 
     checkIfSkierHitObstacle(obstacleManager, assetManager) {
