@@ -79,7 +79,7 @@ export class Game {
                 event.preventDefault();
                 break;
             case Constants.KEYS.SPACE:
-                this.skier.jump();
+                 this.skier.jump();
                 event.preventDefault();
         }
     }

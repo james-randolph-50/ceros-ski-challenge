@@ -21,6 +21,8 @@ export class Skier extends Entity {
         this.assetName = Constants.SKIER_DIRECTION_ASSET[this.direction];
     }
 
+  
+
     move() {
         switch(this.direction) {
             case Constants.SKIER_DIRECTIONS.LEFT_DOWN:
@@ -32,9 +34,9 @@ export class Skier extends Entity {
             case Constants.SKIER_DIRECTIONS.RIGHT_DOWN:
                 this.moveSkierRightDown();
                 break;
-            case Constants.SKIER_DIRECTIONS.JUMP_ONE:
-                this.jump();
-                break;
+            //  case Constants.SKIER_DIRECTIONS.JUMP_ONE:
+            //      this.jump();
+            //      break;
         }
     }
 
@@ -47,7 +49,7 @@ export class Skier extends Entity {
         this.y += this.speed / Constants.SKIER_DIAGONAL_SPEED_REDUCER;
     }
 
-    moveSkierDown() {
+    moveSkierDown() { 
         this.y += this.speed;
     }
 
@@ -67,6 +69,8 @@ export class Skier extends Entity {
     turnLeft() {
         if(this.direction === Constants.SKIER_DIRECTIONS.LEFT) {
             this.moveSkierLeft();
+        } else if (this.direction === Constants.SKIER_DIRECTIONS.JUMP_ONE) {
+            this.setDirection(this.direction - 4);
         }
         else {
             this.setDirection(this.direction - 1);
@@ -76,6 +80,8 @@ export class Skier extends Entity {
     turnRight() {
         if(this.direction === Constants.SKIER_DIRECTIONS.RIGHT) {
             this.moveSkierRight();
+        } else if (this.direction === Constants.SKIER_DIRECTIONS.JUMP_ONE) {
+            this.setDirection(this.direction - 2);
         }
         else {
             this.setDirection(this.direction + 1);
@@ -93,9 +99,12 @@ export class Skier extends Entity {
     }
 
     jump() {
-        this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE);
-        this.y += this.speed;
-        setTimeout(this.turnDown, 1000)
+        console.log("wut")
+        for (var i = 0; i < 60; i++) {
+            console.log(i);
+            setTimeout(this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE, 2000));
+        }
+        this.turnDown();
     }
 
     checkIfSkierHitObstacle(obstacleManager, assetManager) {
@@ -121,8 +130,9 @@ export class Skier extends Entity {
             return intersectTwoRects(skierBounds, obstacleBounds);
         });
 
-        if(collision) {
+        if(collision &&  this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE) != true) {
             this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
+
         }
     };
      

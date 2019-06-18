@@ -25,6 +25,9 @@ export const RHINO_LIFT_MOUTH_OPEN = 'rhinoLiftMouthOpen';
 export const RHINO_LIFT = 'rhinoLift';
 export const RHINO_RUN_LEFT1 = 'rhinoRunLeft1';
 export const RHINO_RUN_LEFT2 = 'rhinoRunLeft2';
+export const RHINO_RUN_RIGHT1 = 'rhinoRunRight1';
+export const RHINO_RUN_RIGHT2 = 'rhinoRunRight2';
+
 
 export const SKIER_STARTING_SPEED = 10;
 export const SKIER_DIAGONAL_SPEED_REDUCER = 1.4142;
@@ -53,7 +56,9 @@ export const ASSETS = {
     [RHINO_LIFT_MOUTH_OPEN] : 'img/rhino_lift_mouth_open.png',
     [RHINO_LIFT] : 'img/rhino_lift.png',
     [RHINO_RUN_LEFT1] : 'img/rhino_run_left.png',
-    [RHINO_RUN_LEFT2] : 'img/rhino_run_left_2.png'
+    [RHINO_RUN_LEFT2] : 'img/rhino_run_left_2.png',
+    [RHINO_RUN_RIGHT1] : 'img/rhino_run_right.png',
+    [RHINO_RUN_RIGHT2] : 'img/rhino_run_right_2.png'
 };
 
 export const SKIER_DIRECTIONS = {
