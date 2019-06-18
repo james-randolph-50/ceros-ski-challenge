@@ -13,17 +13,14 @@ export class Skier extends Entity {
     }
 
     setDirection(direction) {
-        console.log(`updating direction: ${direction}`);
         this.direction = direction;
         this.updateAsset();
     }
 
     updateAsset() {
-        console.log(`updating asset to direction: ${this.direction}`);
         this.assetName = Constants.SKIER_DIRECTION_ASSET[this.direction];
     }
 
-  
 
     move() {
         switch(this.direction) {
@@ -36,9 +33,9 @@ export class Skier extends Entity {
             case Constants.SKIER_DIRECTIONS.RIGHT_DOWN:
                 this.moveSkierRightDown();
                 break;
-            //  case Constants.SKIER_DIRECTIONS.JUMP_ONE:
-            //      this.jump();
-            //      break;
+            case Constants.SKIER_DIRECTIONS.JUMP_ONE:
+                this.moveSkierDown();
+                break;
         }
     }
 
@@ -103,20 +100,15 @@ export class Skier extends Entity {
     }
 
     jump() {
-        console.log("wut")
-        for (var i = 0; i < 60; i++) {
-            console.log(i);
-            setTimeout(this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE, 2000));
-        }
-        this.turnDown();
-    }
+        console.log("space bar pressed to jump");
+        this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE);
+        const turnDown = () => { this.setDirection(Constants.SKIER_DIRECTIONS.DOWN); }
+        setTimeout(turnDown, 1000);
+     }
 
     checkIfSkierHitObstacle(obstacleManager, assetManager) {
-        console.log(`asset name: ${this.assetName}`)
         const asset = assetManager.getAsset(this.assetName);
-        console.log(`asset: ${asset}`)
-        //console.log(skierBounds);
-        console.log(`asset width: ${asset.width}, height: ${asset.height}`);
+ 
         const skierBounds = new Rect(
             this.x - asset.width / 2,
             this.y - asset.height / 2,
@@ -127,7 +119,7 @@ export class Skier extends Entity {
         const collision = obstacleManager.getObstacles().find((obstacle) => {
             const obstacleAsset = assetManager.getAsset(obstacle.getAssetName());
             const obstaclePosition = obstacle.getPosition();
-            console.log(`obstacle width: ${obstacleAsset.width}, height: ${obstacleAsset.height}`);
+
             const obstacleBounds = new Rect(
                 obstaclePosition.x - obstacleAsset.width / 2,
                 obstaclePosition.y - obstacleAsset.height / 2,
@@ -138,7 +130,7 @@ export class Skier extends Entity {
             return intersectTwoRects(skierBounds, obstacleBounds);
         });
 
-        if(collision &&  this.setDirection(Constants.SKIER_DIRECTIONS.JUMP_ONE) != true) {
+        if(collision) {
             this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
 
         }

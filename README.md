@@ -19,6 +19,16 @@ unclear, don't hesitate to reach out.
 
 **My Comments**
 
+* **How I Fixed the Bug:**
+
+* **How I Added the Unit Test:**
+
+* **How I Added Jump Functionality**
+
+* **How I Enabled Jumping Over Certain Obstacles:**
+
+* **How I Added the Rhino:**
+
 * Added jump & rhino assets to constants
 * Added space bar to key map
 * Fixed left arrow bug crash by preventing a -1 on the turnleft when direction == 0.
