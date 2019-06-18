@@ -21,6 +21,10 @@ unclear, don't hesitate to reach out.
 
 * **How I Fixed the Bug:**
 
+The bug was caused by the turnLeft function which would subtract 1 from all skier positions except for a fully left-facing skier.
+
+The skier crash was position 0, so subtracting 1 from that made a request for the -1 asset in the object, which did not exist and caused the crash.
+
 * **How I Added the Unit Test:**
 
 * **How I Added Jump Functionality**
