@@ -3,7 +3,7 @@ import { randomInt } from '../../Core/Utils';
 import { Obstacle } from "./Obstacle";
 
 const DISTANCE_BETWEEN_OBSTACLES = 50;
-const STARTING_OBSTACLE_GAP = 100;
+const STARTING_OBSTACLE_GAP = 500;
 const STARTING_OBSTACLE_REDUCER = 300;
 const NEW_OBSTACLE_CHANCE = 8;
 
