@@ -21,7 +21,7 @@ export const RHINO_LIFT_EAT1 = 'rhinoLiftEat1';
 export const RHINO_LIFT_EAT2 = 'rhinoLiftEat2';
 export const RHINO_LIFT_EAT3 = 'rhinoLiftEat3';
 export const RHINO_LIFT_EAT4 = 'rhinoLiftEat4';
-export const RHINO_LIFT_MOUTH_OPEN = 'rhinoLiftMouthOpen';
+export const RHINO_LIFT_EAT5 = 'rhinoLiftEat5';
 export const RHINO_LIFT = 'rhinoLift';
 export const RHINO_RUN_LEFT1 = 'rhinoRunLeft1';
 export const RHINO_RUN_LEFT2 = 'rhinoRunLeft2';
@@ -50,17 +50,19 @@ export const ASSETS = {
     [ROCK1] : 'img/rock_1.png',
     [ROCK2] : 'img/rock_2.png',
     [RHINO] : 'img/rhino_default.png',
-    [RHINO_LIFT_EAT1] : 'img/rhino_lift_eat_1.png',
-    [RHINO_LIFT_EAT2] : 'img/rhino_lift_eat_2.png',
-    [RHINO_LIFT_EAT3] : 'img/rhino_lift_eat_3.png',
-    [RHINO_LIFT_EAT4] : 'img/rhino_lift_eat_4.png',
-    [RHINO_LIFT_MOUTH_OPEN] : 'img/rhino_lift_mouth_open.png',
+    [RHINO_LIFT_EAT2] : 'img/rhino_lift_eat_1.png',
+    [RHINO_LIFT_EAT3] : 'img/rhino_lift_eat_2.png',
+    [RHINO_LIFT_EAT4] : 'img/rhino_lift_eat_3.png',
+    [RHINO_LIFT_EAT5] : 'img/rhino_lift_eat_4.png',
+    [RHINO_LIFT_EAT1] : 'img/rhino_lift_mouth_open.png',
     [RHINO_LIFT] : 'img/rhino_lift.png',
     [RHINO_RUN_LEFT1] : 'img/rhino_run_left.png',
     [RHINO_RUN_LEFT2] : 'img/rhino_run_left_2.png',
     [RHINO_RUN_RIGHT1] : 'img/rhino_run_right.png',
     [RHINO_RUN_RIGHT2] : 'img/rhino_run_right_2.png'
 };
+
+// SKIER DIRECTIONS
 
 export const SKIER_DIRECTIONS = {
     CRASH : 0,
@@ -89,6 +91,44 @@ export const SKIER_DIRECTION_ASSET = {
     [SKIER_DIRECTIONS.JUMP_FOUR] : SKIER_JUMP4,
     [SKIER_DIRECTIONS.JUMP_FIVE] : SKIER_JUMP5
 };
+
+// RHINO DIRECTIONS
+
+export const RHINO_DIRECTION = {
+        DEFAULT : 0,
+        LEFT_ONE : 1,
+        LEFT_TWO : 2,
+        RIGHT_ONE : 3,
+        RIGHT_TWO : 4,
+    };
+
+export const RHINO_DIRECTION_ASSET = {
+    [RHINO_DIRECTION.DEFAULT] : RHINO,
+    [RHINO_DIRECTION.LEFT_ONE] : RHINO_RUN_LEFT1,
+    [RHINO_DIRECTION.LEFT_TWO] : RHINO_RUN_LEFT2,
+    [RHINO_DIRECTION.RIGHT_ONE] : RHINO_RUN_RIGHT1,
+    [RHINO_DIRECTION.RIGHT_TWO] : RHINO_RUN_RIGHT2
+};
+
+export const RHINO_EATING = {
+    LIFT : 0,
+    EAT_ONE : 1,
+    EAT_TWO : 2,
+    EAT_THREE : 3,
+    EAT_FOUR : 4,
+    EAT_FIVE : 5
+};
+
+export const RHINO_EATING_ASSET = {
+    [RHINO_EATING.LIFT] : RHINO_LIFT,
+    [RHINO_EATING.RHINO_LIFT_EAT1] : RHINO_LIFT_EAT1,
+    [RHINO_EATING.RHINO_LIFT_EAT2] : RHINO_LIFT_EAT2,
+    [RHINO_EATING.RHINO_LIFT_EAT3] : RHINO_LIFT_EAT3,
+    [RHINO_EATING.RHINO_LIFT_EAT4] : RHINO_LIFT_EAT4,
+    [RHINO_EATING.RHINO_LIFT_EAT5] : RHINO_LIFT_EAT5,
+}
+
+// KEYS
 
 export const KEYS = {
     LEFT : 37,
