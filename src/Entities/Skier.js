@@ -129,9 +129,10 @@ export class Skier extends Entity {
             return intersectTwoRects(skierBounds, obstacleBounds);
         });
 
-        if(collision) {
-            this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
-
+        if (this.direction != Constants.SKIER_DIRECTIONS.JUMP_ONE && this.assetName != "rock" ) {
+            if(collision) {
+                this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
+            }
         }
     };
      
