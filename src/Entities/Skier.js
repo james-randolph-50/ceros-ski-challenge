@@ -21,7 +21,6 @@ export class Skier extends Entity {
         this.assetName = Constants.SKIER_DIRECTION_ASSET[this.direction];
     }
 
-
     move() {
         switch(this.direction) {
             case Constants.SKIER_DIRECTIONS.LEFT_DOWN:

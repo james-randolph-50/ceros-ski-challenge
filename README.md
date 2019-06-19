@@ -39,9 +39,6 @@ Called that turnDown after one second passed.
 
 * **How I Added the Rhino:**
 
-* Added jump & rhino assets to constants
-* Added space bar to key map
-* Fixed left arrow bug crash by preventing a -1 on the turnleft when direction == 0.
 
 **Requirements**
 
