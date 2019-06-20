@@ -129,7 +129,7 @@ export class Skier extends Entity {
             return intersectTwoRects(skierBounds, obstacleBounds);
         });
 
-        if (this.direction != Constants.SKIER_DIRECTIONS.JUMP_ONE && obstacleAsset != Constants.ROCK1 ) {
+        if (this.direction != Constants.SKIER_DIRECTIONS.JUMP_ONE/*something here that tests if the object is a rock */) {
             if(collision) {
                 this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
             }
