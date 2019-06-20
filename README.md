@@ -33,9 +33,11 @@ Created a jump method which changed the skier direction to the jump image, while
 
 Added a block-scoped turnDown function which returned the image to the downhill skier.
 
-Called that turnDown after one second passed.
+Called turnDown after one second passed.
 
 * **How I Enabled Jumping Over Certain Obstacles:**
+
+Checks to see if the player is jumping, and if there's a collision where the obstacleAsset's name contains 'tree' (which includes 'tree' and 'tree_cluster' and not either rock asset), it will trigger the crash.
 
 * **How I Added the Rhino:**
 
