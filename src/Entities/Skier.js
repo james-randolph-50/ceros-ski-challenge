@@ -118,6 +118,7 @@ export class Skier extends Entity {
         const collision = obstacleManager.getObstacles().find((obstacle) => {
             const obstacleAsset = assetManager.getAsset(obstacle.getAssetName());
             const obstaclePosition = obstacle.getPosition();
+            const isObstacleAssetTree = obstacleAsset.src.includes('tree');
 
             const obstacleBounds = new Rect(
                 obstaclePosition.x - obstacleAsset.width / 2,
@@ -125,14 +126,16 @@ export class Skier extends Entity {
                 obstaclePosition.x + obstacleAsset.width / 2,
                 obstaclePosition.y
             );
-
+            
             return intersectTwoRects(skierBounds, obstacleBounds);
         });
-
-        if (this.direction != Constants.SKIER_DIRECTIONS.JUMP_ONE/*something here that tests if the object is a rock */) {
-            if(collision) {
+        if (this.direction == Constants.SKIER_DIRECTIONS.JUMP_ONE &&
+            collision && collision.assetName.includes('tree')
+        ) {
                 this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
-            }
+        } 
+        if (this.direction != Constants.SKIER_DIRECTIONS.JUMP_ONE && collision) {
+            this.setDirection(Constants.SKIER_DIRECTIONS.CRASH);
         }
     };
      
