@@ -27,6 +27,8 @@ The skier crash was position 0, so subtracting 1 from that made a request for th
 
 * **How I Added the Unit Test:**
 
+Checks that skierDirection is never -1.
+
 * **How I Added Jump Functionality**
 
 Created a jump method which changed the skier direction to the jump image, while maintaining the negative y-trajectory.
@@ -39,8 +41,16 @@ Called turnDown after one second passed.
 
 Checks to see if the player is jumping, and if there's a collision where the obstacleAsset's name contains 'tree' (which includes 'tree' and 'tree_cluster' and not either rock asset), it will trigger the crash.
 
-* **How I Added the Rhino:**
-
+* **Adding The Rhino:**
+Below is psuedo-code as I didn't reach this part of the challenge. Conditions are marked in quotations (""), and psuedo-code follows immediately after.
+- "Rhino should appear after set time or distance"
+- Draw the Rhino asset after a certain y-position is reached (skier reaches certain distance)
+- "Animate the rhino"
+-  Reuse/refactor the skier movement methods and implement them on the Rhino. Trigger Rhino directional changes by the skierDirection status, to simulate the rhino chasing the skier.
+- Directional methods for the rhino could loop between (runLeft1, runLeft2) & (runRight1, runRight2) images, to animate the rhino to appear to be running in the respective direction.
+- "If Rhino catches the skier, it's game over and the rhino should eat the skier"
+- Write a check collision method that checks the skierBounds with rhinoBounds. If they overlap (collide), the y-speed can be set to 0 (stop going downhill), and the rhinoEat assets can be cycled through once in order to run a animation of the skier being eaten.
+- Alert the player that the game is over
 
 **Requirements**
 
